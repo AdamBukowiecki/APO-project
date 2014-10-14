@@ -1,0 +1,16 @@
+%h1 
+  Nadawanie paczki
+
+=form_tag send_bill_path, method: "post", class: "form-horizontal" do
+  .form-group
+    =label_tag :phone, "Numer telefonu odbiorcy: "
+    =telephone_field :phone, nil, placeholder: "Podaj numer telefonu"
+  .form-group
+    =label_tag :city_id, "Paczkomat docelowy: "
+    =select_tag(:city_id, options_for_select([["Al. Solidarności",1],["Stary Browar", 2]]))   
+  .form-group
+    =label_tag :who_pays, "Typ paczki: "
+    =select_tag(:who_pays, options_for_select([["Na koszt odbiorcy",1],["Na koszt nadawcy", 2]]))   
+
+  .form-group
+    =button_tag "Nadaj paczkę", class: "btn btn-primary"

@@ -1,0 +1,8 @@
+%h1 Podaj numer przesyłki
+%br
+=form_tag spy_check_path, method: "post", class: "form-horizontal" do
+  .form-group
+    =label_tag :number, "Numer przesyłki: "
+    =number_field_tag :number, nil, placeholder: "Podaj numer przesyłki"
+  .form-group
+    =button_tag "Sprawdź paczkę", class: "btn btn-primary"

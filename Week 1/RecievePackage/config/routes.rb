@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  get 'spy/index'
+
+  get 'spy/check'
+
+  get 'pay/handle'
+
+  get 'send/index'
+  get 'send/finish'
+
+  post 'send/bill'
+
   root to: 'recieve#index'
 
   get 'recieve/number'
