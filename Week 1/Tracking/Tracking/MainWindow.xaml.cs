@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.ComponentModel;
 using System.Data;
+using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,6 +26,7 @@ namespace Tracking {
 
         public MainWindow() {
             InitializeComponent();
+            apl_database = new AvailablePackageList();
             packageTable_datatable = new DataTable();
             packageTable_datatable.Columns.Add("ID");
             packageTable_datatable.Columns.Add("Adres");
@@ -59,7 +62,9 @@ namespace Tracking {
                 foreach (Location loc in retrievedPackage.locList.getLocationList()) {
                     packageTable_datatable.Rows.Add(loc.id, loc.address, loc.state);
                 }
-            }  
+            }
+            packageTable_datatable.DefaultView.Sort = "ID DESC";
+            viewtable_datagrid.ItemsSource = packageTable_datatable.DefaultView;
         }        
     }
 }
