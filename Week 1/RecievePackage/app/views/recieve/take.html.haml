@@ -1,0 +1,15 @@
+/If number is correct
+-if @success
+  %h2 
+    Dziękujemy za korzystanie z naszych usług!
+  %br
+  %p
+    Za chwilę otworzy się skrytka z twoją przesyłką.
+
+-else
+  %h2
+    Błąd
+  %br
+  %p
+    Upewnij się że podałeś dobry numer
+  =link_to "Powróć", recieve_number_path

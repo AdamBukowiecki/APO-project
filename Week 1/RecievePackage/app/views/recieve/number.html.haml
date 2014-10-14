@@ -1,0 +1,12 @@
+%h1
+  Podaj numer przesyłki:
+%br
+=form_tag recieve_take_path, method: "post", class: "form-horizontal" do
+  .form-group
+    =label_tag :phone, "Numer telefonu: "
+    =telephone_field :phone, nil, placeholder: "Podaj numer telefonu"
+  .form-group
+    =label_tag :number, "Kod przesyłki: "
+    =number_field_tag :number, nil, placeholder: "Podaj kod odbioru"  
+  .form-group
+    =button_tag "Odbierz paczkę", class: "btn btn-primary"
