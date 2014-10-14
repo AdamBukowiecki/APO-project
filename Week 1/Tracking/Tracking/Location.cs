@@ -9,12 +9,16 @@ namespace Tracking {
     /// Contains data about location of package.
     /// </summary>
     public sealed class Location {
-        private int id_loc;
-        private String address;
-        private String state;
+        public int id;
+        public String address;
+        public String state;
 
-        public Location(int id_loc, String address, String stateDescription) {
-
+        public Location(int id_loc, String address_loc, String stateDescription) {
+            this.id = id_loc;
+            this.address = address_loc;
+            this.state = stateDescription;
         }
+
+        
     }
 }

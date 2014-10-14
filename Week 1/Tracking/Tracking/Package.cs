@@ -12,7 +12,9 @@ namespace Tracking {
         private int id;
         private LocationList locList;
 
-        public Package() {
+        public Package(int pid, LocationList locationList) {
+            this.id = pid;
+            this.locList = locationList;
         }
 
         public int getPackageId() {

@@ -36,6 +36,12 @@ namespace Tracking {
             }
         }
 
+        private void button_search_Click(object sender, RoutedEventArgs e)
+        {
+
+            //textbox_packagecode.
+        }
+
         
     }
 }
