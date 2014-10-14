@@ -19,9 +19,23 @@ namespace Tracking {
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+        public DataTable packageTable_datatable;
+
         public MainWindow() {
             InitializeComponent();
-            DataTable packageTable_datatable = new DataTable();
+            packageTable_datatable = new DataTable();
         }
+
+        private void textbox_packagecode_GotFocus(object sender, RoutedEventArgs e) {
+            textbox_packagecode.Text = ""; 
+        }
+
+        private void textbox_packagecode_LostFocus(object sender, RoutedEventArgs e) {
+            if (textbox_packagecode.Text == "") {
+                textbox_packagecode.Text = "Kod przesyłki"; 
+            }
+        }
+
+        
     }
 }

@@ -9,12 +9,18 @@ namespace Tracking {
     /// Contains data of particular package.
     /// </summary>
     public sealed class Package {
-        private String label;
+        private int id;
         private LocationList locList;
 
+        public Package() {
+        }
 
+        public int getPackageId() {
+            return this.id;
+        }
 
-
-
+        public LocationList getLocationList(){
+            return this.locList;
+        }
     }
 }
