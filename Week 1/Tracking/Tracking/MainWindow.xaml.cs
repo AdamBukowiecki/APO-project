@@ -20,10 +20,14 @@ namespace Tracking {
     /// </summary>
     public partial class MainWindow : Window {
         public DataTable packageTable_datatable;
+        public AvailablePackageList apl_database;
 
         public MainWindow() {
             InitializeComponent();
             packageTable_datatable = new DataTable();
+            packageTable_datatable.Columns.Add("ID");
+            packageTable_datatable.Columns.Add("Adres");
+            packageTable_datatable.Columns.Add("Stan");
         }
 
         private void textbox_packagecode_GotFocus(object sender, RoutedEventArgs e) {
@@ -38,10 +42,24 @@ namespace Tracking {
 
         private void button_search_Click(object sender, RoutedEventArgs e)
         {
+            int intcode = 0;
+            try {
+                if (textbox_packagecode.Text != "" && textbox_packagecode.Text != "Kod przesyłki")
+                {
+                    intcode = Convert.ToInt32(textbox_packagecode.Text);
+                }
+            }
+            catch (FormatException) {
+                intcode = 0;
+            }
 
-            //textbox_packagecode.
-        }
-
-        
+            Package retrievedPackage = apl_database.getPackageById(intcode);
+            if (!(retrievedPackage.Equals(null)))
+            {
+                foreach (Location loc in retrievedPackage.locList.getLocationList()) {
+                    packageTable_datatable.Rows.Add(loc.id, loc.address, loc.state);
+                }
+            }  
+        }        
     }
 }

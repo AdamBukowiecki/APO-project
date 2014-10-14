@@ -13,11 +13,13 @@ namespace Tracking
         private List<Package> packList;
 
         public AvailablePackageList() {
-            this.packList = new List<Package>;
+            this.packList = new List<Package>();
             this.generateBase();
         }
 
-
+        /// <summary>
+        /// Generates random data for example
+        /// </summary>
         private void generateBase() {
             LocationList l1 = new LocationList();
             Package p1 = new Package(123456, l1);
@@ -25,7 +27,8 @@ namespace Tracking
         }
 
         public Package getPackageById(int p_id){
-            Package result = null;
+            LocationList loctemp = new LocationList();
+            Package result = new Package(0, loctemp);
             foreach (Package pack in packList)
             {
                 if (pack.getPackageId() == p_id)

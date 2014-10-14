@@ -9,8 +9,8 @@ namespace Tracking {
     /// Contains data of particular package.
     /// </summary>
     public sealed class Package {
-        private int id;
-        private LocationList locList;
+        public int id;
+        public LocationList locList;
 
         public Package(int pid, LocationList locationList) {
             this.id = pid;
