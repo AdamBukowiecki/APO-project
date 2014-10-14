@@ -18,6 +18,10 @@
         </Grid.ColumnDefinitions>
         <TextBox x:Name="textbox_packagecode" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="Kod przesyłki" GotFocus="textbox_packagecode_GotFocus" LostFocus="textbox_packagecode_LostFocus"/>
         <Button x:Name="button_search" Content="Szukaj" Grid.Column="2" Grid.Row="1" Click="button_search_Click"/>
-        <DataGrid x:Name="viewtable_datagrid" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Height="257" Width="488" Grid.ColumnSpan="2"/>
+        <DataGrid x:Name="viewtable_datagrid" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Height="257" Width="488" Grid.ColumnSpan="2" ItemsSource="{Binding Path=. }" >
+            <DataGrid.Columns>
+            
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
